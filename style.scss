@@ -1,0 +1,60 @@
+/* GENERAL STYLES */
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/***************************************/
+.moving-text-container {
+    max-width: 1400px;
+}
+
+.line {
+    font-size: 2em;
+    white-space: nowrap;
+    animation-name: moveLines;
+    animation-duration:180s;
+    animation-direction: forwards;    
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @for $i from 1 through 3 {
+        @if $i % 2 == 0 {
+            &:nth-child(#{$i}) {
+                animation-name: moveLinesRight;
+            }
+          } @else {
+            &:nth-child(#{$i}) {
+                animation-name: moveLinesLeft;
+            }
+          }
+    }
+}
+
+
+
+@keyframes moveLinesLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveLinesRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,100 @@
+/* GENERAL STYLES */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/***************************************/
+.moving-text-container {
+  max-width: 1400px;
+}
+
+.line {
+  font-size: 2em;
+  white-space: nowrap;
+  -webkit-animation-name: moveLines;
+          animation-name: moveLines;
+  -webkit-animation-duration: 180s;
+          animation-duration: 180s;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.line:nth-child(1) {
+  -webkit-animation-name: moveLinesLeft;
+          animation-name: moveLinesLeft;
+}
+
+.line:nth-child(2) {
+  -webkit-animation-name: moveLinesRight;
+          animation-name: moveLinesRight;
+}
+
+.line:nth-child(3) {
+  -webkit-animation-name: moveLinesLeft;
+          animation-name: moveLinesLeft;
+}
+
+@-webkit-keyframes moveLinesLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes moveLinesLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes moveLinesRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes moveLinesRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
